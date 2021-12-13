@@ -21,8 +21,25 @@ public class DayOne {
 		
 		scanner.close();
 		
+		System.out.println("Task 1");
+		for(int i = 1; i < depths.size(); i++) {
+			if(depths.get(i) > depths.get(i-1)) {
+				System.out.println(depths.get(i) + " increased");
+				count++;
+			}
+			else {
+				System.out.println(depths.get(i) + " decreased");
+			}
+		}
+		
+		System.out.println();
+		System.out.println(count);
+		System.out.println();
+		
+		System.out.println("Task 2");
+		count = 0;
 		for(int i = 2; i < depths.size()-1; i++) {
-			if((depths.get(i+1)) > (depths.get(i-2) )) {
+			if(depths.get(i+1) > depths.get(i-2)) {
 				System.out.println(depths.get(i) + " increased");
 				count++;
 			}
