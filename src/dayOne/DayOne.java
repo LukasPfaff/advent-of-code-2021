@@ -15,7 +15,6 @@ public class DayOne {
 		while(scanner.hasNext()) {
 			String depth = scanner.next();
 			Integer depthInt = Integer.valueOf(depth);
-			System.out.println(depth);
 			depths.add(depthInt);
 		}
 		
@@ -24,11 +23,11 @@ public class DayOne {
 		System.out.println("Task 1");
 		for(int i = 1; i < depths.size(); i++) {
 			if(depths.get(i) > depths.get(i-1)) {
-				System.out.println(depths.get(i) + " increased");
+				//System.out.println(depths.get(i) + " increased");
 				count++;
 			}
 			else {
-				System.out.println(depths.get(i) + " decreased");
+				//System.out.println(depths.get(i) + " decreased");
 			}
 		}
 		
@@ -40,11 +39,11 @@ public class DayOne {
 		count = 0;
 		for(int i = 2; i < depths.size()-1; i++) {
 			if(depths.get(i+1) > depths.get(i-2)) {
-				System.out.println(depths.get(i) + " increased");
+				//System.out.println(depths.get(i) + " increased");
 				count++;
 			}
 			else {
-				System.out.println(depths.get(i) + " decreased");
+				//System.out.println(depths.get(i) + " decreased");
 			}
 		}
 		
