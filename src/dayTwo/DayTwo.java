@@ -1,27 +1,30 @@
 package dayTwo;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class DayTwo {
-	private static String inputLine;
 	private static int depth;
 	private static int horizontalPos;
+	private static int aim;
 	
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner("file.txt");
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner scanner = new Scanner(new File("src/dayTwo/resources/DayTwoInput.txt"));
 		
 		while(scanner.hasNext()){
-			inputLine = Scanner.next();
 			
-			String[] parts = inputLine.split(" ");
-			
-			switch(parts[0]){
+			switch(scanner.next()){
 				case "forward":
-					horizontalPos += Integer.valueOf(parts[1]);
+					int tmp = scanner.nextInt();
+					horizontalPos += tmp;
+					depth += aim * tmp;
 					break;
 				case "up":
-					depth -= Integer.valueOf(parts[1]);
+					aim -= scanner.nextInt();
 					break;
 				case "down":
-					depth += Integer.valueOf(parts[1]);
+					aim += scanner.nextInt();
 					break;
 				default:
 					System.out.println("Houston, wir haben ein Problem");
