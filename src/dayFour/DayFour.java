@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class dayFour {
+public class DayFour {
 
 	private static String input;
 	private static String[] inputSplitted;
@@ -14,7 +14,7 @@ public class dayFour {
 	private static BingoBoard winningBoard;
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner scanner = new Scanner(new File("src/ressources/test.txt"));
+		Scanner scanner = new Scanner(new File("src/ressources/dayFourInput.txt"));
 
 		input = scanner.next();
 		inputSplitted = input.split(",");
@@ -30,7 +30,6 @@ public class dayFour {
 		for(String s : inputSplitted){
 			int asInt = Integer.parseInt(s);
 			Boolean stop = false;
-			
 			for(BingoBoard board : boards){
 				board.contains(asInt);
 				stop = board.hasWon();
@@ -39,13 +38,15 @@ public class dayFour {
 					winningBoard = new BingoBoard(board);
 				}
 			}
-			
-			if(stop) break;
+			if(stop){
+				break;
+			}
 		}
 		
-		//int sum = winningBoard.sumOfUnmarked();
+		int sum = winningBoard.sumOfUnmarked();
 		
 		System.out.println(winningNumber);
-		//System.out.println(sum);
+		System.out.println(sum);
+		System.out.println("Ergebnis: " + sum * winningNumber);
 	}
 }

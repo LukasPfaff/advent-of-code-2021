@@ -10,6 +10,7 @@ public class BingoBoard {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				board[i][j] = new BingoField(list.get(k));
+				k++;
 			}
 		}
 	}
@@ -28,8 +29,9 @@ public class BingoBoard {
 					break;
 				}
 			}
-			if (contains)
+			if (contains){
 				break;
+			}
 		}
 	}
 
@@ -59,6 +61,9 @@ public class BingoBoard {
 						won = true;
 					}
 				}
+			}
+			if(won){
+				break;
 			}
 		}
 		return won;
